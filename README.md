@@ -26,3 +26,10 @@
 ### Tech Specs:
 - 1920x1080 16:9 aspect ration
 - Build to PC, Mac, Web.
+
+
+### Early Development Priorities
+- Establish a simple world
+- Solve camera movement
+- Get the player moving and avoiding
+- Get the player shooting and hitting
