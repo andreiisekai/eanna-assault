@@ -48,7 +48,7 @@ namespace UnityStandardAssets.Utility
         private float progressDistance; // The progress round the route, used in smooth mode.
         private int progressNum; // the current waypoint number, used in point-to-point mode.
         private Vector3 lastPosition; // Used to calculate current speed (since we may not have a rigidbody component)
-        private float speed; // current speed of this object (calculated from delta since last frame)
+        [SerializeField]  private float speed; // current speed of this object (calculated from delta since last frame)
 
         // setup script properties
         private void Start()
@@ -90,8 +90,8 @@ namespace UnityStandardAssets.Utility
                 // we use lerp as a simple way of smoothing out the speed over time.
                 if (Time.deltaTime > 0)
                 {
-                    speed = Mathf.Lerp(speed, (lastPosition - transform.position).magnitude/Time.deltaTime,
-                                       Time.deltaTime);
+                    // speed = Mathf.Lerp(speed, (lastPosition - transform.position).magnitude/Time.deltaTime, Time.deltaTime);
+                    speed = Time.deltaTime;
                 }
                 target.position =
                     circuit.GetRoutePoint(progressDistance + lookAheadForTargetOffset + lookAheadForTargetFactor*speed)

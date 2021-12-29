@@ -1,6 +1,7 @@
 # Rail Shooter Game Design
 
 ![Unity](/images/rail-shooter.jpg)
+
 | Name:  | Eanna Assault |
 | ------ | ------ |
 | Player Experience: | Chaos |
@@ -33,3 +34,5 @@
 - Solve camera movement
 - Get the player moving and avoiding
 - Get the player shooting and hitting
+
+![Unity](/images/GameplayTune.jpg)
