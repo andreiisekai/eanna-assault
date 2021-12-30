@@ -11,14 +11,4 @@ public class MusicPlayer : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
     }
-    void Start()
-    {
-        Invoke("LoadFirstScene", sceneLoadDelay);
-    }
-
-    void LoadFirstScene()
-    {
-
-        SceneManager.LoadScene(1);
-    }
 }
