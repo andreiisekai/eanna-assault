@@ -36,3 +36,7 @@
 - Get the player shooting and hitting
 
 ![Unity](/images/GameplayTune.jpg)
+
+###How to avoid calling everything a whatevermanager ?
+
+Name it instead: Coordinator, Builder, Writer, Reader, Handler, Container, Protocol, Target, Converter, Controller, View, Factory, Entity, Bucket. 

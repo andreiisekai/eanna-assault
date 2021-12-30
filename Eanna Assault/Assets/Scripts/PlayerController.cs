@@ -3,29 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
+    [Header("General")]
     [Tooltip("In ms^-1")][SerializeField] float moveSpeed = 20f;
     [Tooltip("In m")] [SerializeField] float xRange = 10f;
     [Tooltip("In m")] [SerializeField] float yRange = 5f;
 
+    [Header("Screen-Position Based")]
     [SerializeField] float positionPitchFactor = -2f;
-    [SerializeField] float verticalInputPitchFactor = -30f;
     [SerializeField] float positionYawFactor = 3f;
+
+    [Header("Control Based")]
+    [SerializeField] float verticalInputPitchFactor = -30f;
     [SerializeField] float horizontalInputRollFactor = -30f;
 
     float horizontalInput, verticalInput;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    bool isControlEnabled = true;
 
     // Update is called once per frame
     void Update()
     {
-        ProcessPlayerInput();
+        if(isControlEnabled)
+        {
+            ProcessPlayerInput();
+        }
+    }
 
+    void OnPlayerDeath()  // referenced by string
+    {
+        isControlEnabled = false;
+        print("Movement Stopped");
     }
 
     private void ProcessPlayerInput()
