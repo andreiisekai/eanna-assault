@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 465066}
   - component: {fileID: 3370578}
   - component: {fileID: 2319444}
+  - component: {fileID: 1930375374313613130}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1930375374313613130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61ef877ca595e7448b2c50f3473fb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &178266
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +105,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 432640}
-  - component: {fileID: 2400745909325002167}
   m_Layer: 0
   m_Name: Ship_2
   m_TagString: Untagged
@@ -116,16 +128,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
---- !u!65 &2400745909325002167
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 178266}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.25, y: 9.34, z: 8.53}
-  m_Center: {x: 0, y: -0.33, z: -0.57}
