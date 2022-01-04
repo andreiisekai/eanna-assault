@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("In ms^-1")][SerializeField] float moveSpeed = 20f;
     [Tooltip("In m")] [SerializeField] float xRange = 10f;
     [Tooltip("In m")] [SerializeField] float yRange = 5f;
+    [SerializeField] GameObject[] guns;
 
     [Header("Screen-Position Based")]
     [SerializeField] float positionPitchFactor = -2f;
@@ -20,7 +21,8 @@ public class PlayerController : MonoBehaviour
 
     float horizontalInput, verticalInput;
     bool isControlEnabled = true;
-
+    bool fireInput;
+    
     // Update is called once per frame
     void Update()
     {
@@ -39,9 +41,11 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+        fireInput = Input.GetButton("Fire");
 
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
     }
 
     private void ProcessRotation()
@@ -69,5 +73,27 @@ public class PlayerController : MonoBehaviour
         float yPosClamped = Mathf.Clamp(yPos, -yRange, yRange);
 
         transform.localPosition = new Vector3(xPosClamped, yPosClamped, transform.localPosition.z);
+    }
+
+    void ProcessFiring()
+    {
+        
+        if (fireInput)
+        {
+            print("Firing");
+            FireGuns(true);
+        }
+        else
+        {
+            FireGuns(false);
+        }
+    }
+
+    void FireGuns(bool enable)
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(enable);
+        }
     }
 }

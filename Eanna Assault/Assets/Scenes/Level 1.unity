@@ -568,8 +568,20 @@ PrefabInstance:
       objectReference: {fileID: 869166319}
     - target: {fileID: 3815122946902411335, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
       propertyPath: m_Name
-      value: Bullets Left
+      value: Gun Left
       objectReference: {fileID: 0}
+    - target: {fileID: 4732547029739480325, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
+      propertyPath: guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732547029739480325, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
+      propertyPath: guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1504403835}
+    - target: {fileID: 4732547029739480325, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
+      propertyPath: guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 557131707}
     - target: {fileID: 8125628204061748044, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -620,7 +632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8747275893606867464, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
       propertyPath: m_Name
-      value: Bullets Right
+      value: Gun Right
       objectReference: {fileID: 0}
     - target: {fileID: 8747275893606867467, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
       propertyPath: CollisionModule.type
@@ -667,6 +679,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &557131707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8747275893606867464, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
+  m_PrefabInstance: {fileID: 528698328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b6a28265cff5e4cb4355af1a24cfba, type: 3}
+--- !u!1 &1504403835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3815122946902411335, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
+  m_PrefabInstance: {fileID: 528698328}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1575078208
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,13 +12,13 @@ public class ScoreBoard : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
-        scoreText.text = score.ToString("000000000");
+        scoreText.text = score.ToString();
     }
 
     // Update is called once per frame
     public void ScoreHit(int scorePerHit)
     {
         score = score + scorePerHit;
-        scoreText.text = score.ToString("000000000");
+        scoreText.text = score.ToString();
     }
 }
