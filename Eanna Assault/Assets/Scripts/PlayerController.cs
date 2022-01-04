@@ -77,16 +77,7 @@ public class PlayerController : MonoBehaviour
 
     void ProcessFiring()
     {
-        
-        if (fireInput)
-        {
-            print("Firing");
-            FireGuns(true);
-        }
-        else
-        {
-            FireGuns(false);
-        }
+        FireGuns(fireInput);
     }
 
     void FireGuns(bool enable)

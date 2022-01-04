@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
     [SerializeField] int scorePerHit = 12;
+    [SerializeField] int healthPoints = 100;
+    [SerializeField] int healthPointsPerHit = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +34,23 @@ public class Enemy : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
+        ProcessHit();
+        if (healthPoints <= 0)
+        {
+            KillEnemy();
+        }
+    }
+
+    void ProcessHit()
+    {
+        healthPoints = healthPoints - healthPointsPerHit;
+        scoreBoard.ScoreHit(scorePerHit);
+    }
+
+    void KillEnemy()
+    {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
-        scoreBoard.ScoreHit(scorePerHit);
         Destroy(transform.parent.gameObject);
     }
 }
