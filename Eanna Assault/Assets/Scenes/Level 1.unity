@@ -171,10 +171,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -772,6 +772,7 @@ GameObject:
   - component: {fileID: 750996521}
   - component: {fileID: 750996523}
   - component: {fileID: 750996522}
+  - component: {fileID: 750996524}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -896,6 +897,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750996520}
   m_CullTransparentMesh: 1
+--- !u!114 &750996524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750996520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800127b96110ecf4296a6fd8b3fae95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &869166319 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 638701142, guid: 522638dddcae72e4ea29aa2dcd8869ea, type: 3}
@@ -1194,6 +1207,10 @@ PrefabInstance:
       propertyPath: deathFX
       value: 
       objectReference: {fileID: 3592099839166275571, guid: ce52b2a26e88e5e49821036bb4f6d8c2, type: 3}
+    - target: {fileID: 1930375374313613130, guid: c8b6a28265cff5e4cb4355af1a24cfba, type: 3}
+      propertyPath: scorePerHit
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b6a28265cff5e4cb4355af1a24cfba, type: 3}
 --- !u!1 &1575078208
@@ -1368,6 +1385,10 @@ PrefabInstance:
       propertyPath: deathFX
       value: 
       objectReference: {fileID: 3592099839166275571, guid: ce52b2a26e88e5e49821036bb4f6d8c2, type: 3}
+    - target: {fileID: 1930375374313613130, guid: c8b6a28265cff5e4cb4355af1a24cfba, type: 3}
+      propertyPath: scorePerHit
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8b6a28265cff5e4cb4355af1a24cfba, type: 3}
 --- !u!1 &1679904998

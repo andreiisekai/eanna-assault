@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     void OnPlayerDeath()  // referenced by string
     {
         isControlEnabled = false;
-        print("Movement Stopped");
     }
 
     private void ProcessPlayerInput()

@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float colliderSize = 4f;
+    ScoreBoard scoreBoard;
+    float colliderSize = 4f;
     [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
+    [SerializeField] int scorePerHit = 12;
+
     // Start is called before the first frame update
     void Start()
     {
-        AddNonTriggerBoxCollider();
+        AddBoxCollider();
+        scoreBoard = FindObjectOfType<ScoreBoard>();
     }
 
     // Update is called once per frame
@@ -19,17 +23,18 @@ public class Enemy : MonoBehaviour
     {
         
     }
-    void AddNonTriggerBoxCollider()
+    void AddBoxCollider()
     {
         BoxCollider boxCollider = gameObject.AddComponent<BoxCollider>();
         boxCollider.isTrigger = false;
-        boxCollider.size = new Vector3(colliderSize, colliderSize, colliderSize);
+        //boxCollider.size = new Vector3(colliderSize, colliderSize, colliderSize);
     }
 
     void OnParticleCollision(GameObject other)
     {
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         fx.transform.parent = parent;
-        Destroy(gameObject);
+        scoreBoard.ScoreHit(scorePerHit);
+        Destroy(transform.parent.gameObject);
     }
 }
