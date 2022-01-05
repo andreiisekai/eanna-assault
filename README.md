@@ -42,3 +42,11 @@
 Name it instead: Coordinator, Builder, Writer, Reader, Handler, Container, Protocol, Target, Converter, Controller, View, Factory, Entity, Bucket. 
 
 ![Unity](/images/Beat-Chart.jpg)
+
+### Level Design Iteration - What to look for
+- Layout to support your beats.
+- Visual variation.
+- Interesting dodging.
+- Line of sight for spawning.
+- Entry points for enemies.
+- Room for enemy behaviour.
