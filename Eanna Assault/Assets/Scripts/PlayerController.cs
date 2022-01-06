@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     float horizontalInput, verticalInput;
     bool isControlEnabled = true;
-    bool fireInput;
+    bool isFireInput;
     
     // Update is called once per frame
     void Update()
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        fireInput = Input.GetButton("Fire");
+        isFireInput = Input.GetButton("Fire");
 
         ProcessTranslation();
         ProcessRotation();
@@ -77,14 +78,15 @@ public class PlayerController : MonoBehaviour
 
     void ProcessFiring()
     {
-        FireGuns(fireInput);
+        FireGuns(isFireInput);
     }
 
-    void FireGuns(bool enable)
+    void FireGuns(bool isEnabled)
     {
-        foreach (GameObject gun in guns)
+        foreach (GameObject gun in guns)  // may affect death FX
         {
-            gun.SetActive(enable);
+            EmissionModule emission = gun.GetComponent<ParticleSystem>().emission;
+            emission.enabled = isEnabled; 
         }
     }
 }
