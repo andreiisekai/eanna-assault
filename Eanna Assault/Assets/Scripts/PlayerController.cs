@@ -47,6 +47,11 @@ public class PlayerController : MonoBehaviour
         ProcessTranslation();
         ProcessRotation();
         ProcessFiring();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void ProcessRotation()
