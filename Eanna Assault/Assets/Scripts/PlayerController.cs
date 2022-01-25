@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.ParticleSystem;
 
 public class PlayerController : MonoBehaviour
@@ -23,13 +24,29 @@ public class PlayerController : MonoBehaviour
     float horizontalInput, verticalInput;
     bool isControlEnabled = true;
     bool isFireInput;
-    
+    SceneLoader sceneLoader;
+
+    private void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(isControlEnabled)
         {
             ProcessPlayerInput();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -48,10 +65,6 @@ public class PlayerController : MonoBehaviour
         ProcessRotation();
         ProcessFiring();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 
     private void ProcessRotation()

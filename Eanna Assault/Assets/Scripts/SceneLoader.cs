@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] float sceneLoadDelay = 2f;
+
     void Start()
     {
         Invoke("LoadFirstScene", sceneLoadDelay);
@@ -14,5 +15,10 @@ public class SceneLoader : MonoBehaviour
     void LoadFirstScene()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
     }
 }
